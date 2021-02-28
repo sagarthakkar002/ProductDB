@@ -5,7 +5,7 @@ import constData from "./constants";
 import "./Table.css";
 
 const Table = ({ productData }) => {
-  const { checkBoxText, searchPlaceHolder, noDataFound } = constData;
+  const { checkBoxText, searchPlaceHolder, noDataFound, doneText } = constData;
   const [tableData, setTableData] = useState(productData);
   const [mappedObj, setMappedObj] = useState(checkSelected(productData));
   const [checked, setChecked] = useState(false);
@@ -98,6 +98,10 @@ const Table = ({ productData }) => {
       ) : (
         <div className="notFound">{noDataFound}</div>
       )}
+
+      <div>
+        <button className="button-primary">{doneText}</button>
+      </div>
     </div>
   );
 };
